@@ -1,0 +1,62 @@
+/* Estilos básicos e responsivos */
+
+body {
+margin: 0;
+padding: 0;
+font-family: "Roboto", Arial, sans-serif;
+background-color: #f4f4f4;
+}
+
+header,
+footer {
+background-color: #336699;
+color: #fff;
+text-align: center;
+padding: 10px;
+}
+
+main {
+padding: 20px;
+}
+
+button {
+background-color: #336699;
+color: #fff;
+border: none;
+padding: 10px 20px;
+font-size: 16px;
+margin: 5px;
+border-radius: 5px;
+}
+
+#nextBtn {
+background-color: #198754;
+}
+
+button:hover {
+opacity: 0.9;
+cursor: pointer;
+}
+
+#prayer-container {
+background-color: #fff;
+padding: 20px;
+border-radius: 5px;
+margin-bottom: 20px;
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#progress {
+padding: 10px;
+margin-top: 15px;
+margin-bottom: 15px;
+text-align: center;
+font-weight: bold;
+}
+
+@media (max-width: 600px) {
+	button {
+	width: 100%;
+	box-sizing: border-box;
+	}
+}
