@@ -66,7 +66,7 @@ class Rosary {
 		if (this.diaDaSemana === 4) {
 			return "luminous";
 		}
-		
+
 		return "glorious";
 	}
 
@@ -200,6 +200,8 @@ class UIController {
 	}
 
 	setupEventListeners(rosary) {
+		this.mysterySelect.value = rosary.currentMystery;
+
 		this.mysterySelect.addEventListener("change", () => {
 			this.welcomeScreenButtons.style.display = "block";
 		});
