@@ -332,8 +332,6 @@ class UIController {
 
   updateFontSize() {
     this.prayerText.style.fontSize = this.currentFontSize + "px";
-    this.prayerTitle.style.fontSize = this.currentFontSize + "px";
-    this.progressText.style.fontSize = this.currentFontSize + "px";
   }
 }
 
