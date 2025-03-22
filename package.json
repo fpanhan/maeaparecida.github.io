@@ -1,0 +1,26 @@
+{
+  "name": "maeaparecida.github.io",
+  "version": "1.0.0",
+  "description": "mae.aparecida.br",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --watch . --ext html,js,css --exec http-server -p 8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fpanhan/maeaparecida.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/fpanhan/maeaparecida.github.io/issues"
+  },
+  "homepage": "https://github.com/fpanhan/maeaparecida.github.io#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "nodemon": "^3.1.9"
+  }
+}

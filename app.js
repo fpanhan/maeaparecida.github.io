@@ -319,6 +319,22 @@ class UIController {
   updateResumeButton(hasState) {
     this.resumeBtn.style.display = hasState ? "inline-block" : "none";
   }
+
+  increaseFontSize() {
+    this.currentFontSize++;
+    this.updateFontSize();
+  }
+
+  decreaseFontSize() {
+    this.currentFontSize--;
+    this.updateFontSize();
+  }
+
+  updateFontSize() {
+    this.prayerText.style.fontSize = this.currentFontSize + "px";
+    this.prayerTitle.style.fontSize = this.currentFontSize + "px";
+    this.progressText.style.fontSize = this.currentFontSize + "px";
+  }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
