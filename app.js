@@ -91,7 +91,7 @@ class Rosary {
     seq.push(
       new Prayer(
         "Oferecimento",
-        "Divino Jesus, eu vos ofereço este terço que vou rezar, contemplando os mistérios de nossa Redenção. Concedei-me, pela intercessão de Maria, vossa Mãe Santíssima, a quem me dirijo, as graças necessárias para bem rezá-lo para ganhar as indulgências desta santa devoção. (Pode-se acrescentar o que segue, e também intenções particulares: Ofereço-Vos também em reparação aos Corações de Jesus e Maria, nas intenções do Imaculado Coração de Maria, nas intenções do Santo Padre, pelo Santo Padre e por toda a Igreja, pela santificação do clero e das famílias, pelas vocações sacerdotais, religiosas, missionárias e leigas, pela paz no mundo, pelo Brasil.)"
+        "Divino Jesus, eu vos ofereço este terço que vou rezar, contemplando os mistérios de nossa Redenção. Concedei-me, pela intercessão de Maria, vossa Mãe Santíssima, a quem me dirijo, as graças necessárias para bem rezá-lo para ganhar as indulgências desta santa devoção. (Pode-se acrescentar o que segue, e também intenções particulares.) Ofereço-Vos também em reparação aos Corações de Jesus e Maria, nas intenções do Imaculado Coração de Maria, nas intenções do Santo Padre, pelo Santo Padre e por toda a Igreja, pela santificação do clero e das famílias, pelas vocações sacerdotais, religiosas, missionárias e leigas, pela paz no mundo, pelo Brasil."
       )
     );
 
@@ -105,7 +105,7 @@ class Rosary {
     seq.push(
       new Prayer(
         "Credo",
-        "Creio em Deus Pai todo-poderoso, Criador do céu e da terra. E em Jesus Cristo, Seu Filho, Nosso Senhor, que foi concebido pelo poder do Espírito Santo, nasceu da Virgem Maria, padeceu sob Pôncio Pilatos; foi crucificado, morto e sepultado; desceu aos infiéis; ressuscitou ao terceiro dia; subiu aos céus; está sentado à direita de Deus Pai todo-poderoso; de onde há de vir para julgar os vivos e os mortos. Creio no Espírito Santo, na Santa Igreja Católica, na comunhão dos santos, na remissão dos pecados, na ressurreição da carne e na vida eterna. Amém."
+        "Creio em Deus Pai todo-poderoso, Criador do céu e da terra. E em Jesus Cristo, Seu Filho, Nosso Senhor, que foi concebido pelo poder do Espírito Santo, nasceu da Virgem Maria, padeceu sob Pôncio Pilatos; foi crucificado, morto e sepultado; desceu a mansão dos mortos; ressuscitou ao terceiro dia; subiu aos céus; está sentado à direita de Deus Pai todo-poderoso; de onde há de vir para julgar os vivos e os mortos. Creio no Espírito Santo, na Santa Igreja Católica, na comunhão dos santos, na remissão dos pecados, na ressurreição da carne e na vida eterna. Amém."
       )
     );
 
@@ -119,21 +119,24 @@ class Rosary {
     seq.push(
       new Prayer(
         "Ave Maria (1/3)",
-        "A primeira Ave Maria em honra a Deus Pai que nos criou: Ave Maria, cheia de graça, o Senhor é convosco; bendita sois vós entre as mulheres e bendito é o fruto do vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós, pecadores, agora e na hora de nossa morte. Amém."
+        "A primeira Ave Maria em honra a Deus Pai que nos criou: 
+Ave Maria, cheia de graça, o Senhor é convosco; bendita sois vós entre as mulheres e bendito é o fruto do vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós, pecadores, agora e na hora de nossa morte. Amém."
       )
     );
 
     seq.push(
       new Prayer(
         "Ave Maria (2/3)",
-        "A segunda Ave Maria a Deus Filho que nos remiu: Ave Maria, cheia de graça, o Senhor é convosco; bendita sois vós entre as mulheres e bendito é o fruto do vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós, pecadores, agora e na hora de nossa morte. Amém."
+        "A segunda Ave Maria a Deus Filho que nos remiu: 
+Ave Maria, cheia de graça, o Senhor é convosco; bendita sois vós entre as mulheres e bendito é o fruto do vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós, pecadores, agora e na hora de nossa morte. Amém."
       )
     );
 
     seq.push(
       new Prayer(
         "Ave Maria (3/3)",
-        "A terceira Ave Maria ao Espírito Santo que nos santifica: Ave Maria, cheia de graça, o Senhor é convosco; bendita sois vós entre as mulheres e bendito é o fruto do vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós, pecadores, agora e na hora de nossa morte. Amém."
+        "A terceira Ave Maria ao Espírito Santo que nos santifica: 
+Ave Maria, cheia de graça, o Senhor é convosco; bendita sois vós entre as mulheres e bendito é o fruto do vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós, pecadores, agora e na hora de nossa morte. Amém."
       )
     );
 
@@ -202,7 +205,8 @@ class Rosary {
     seq.push(
       new Prayer(
         "Salve Rainha",
-        "Salve Rainha! Mãe de misericórdia, vida, doçura, esperança nossa, Salve! A vós bradamos os degredados filhos de Eva. A vós suspiramos, gemendo e chorando neste vale de lágrimas. Eia, pois, advogada nossa, esses vossos olhos misericordiosos a nós volvei, e depois deste desterro, mostrai-nos Jesus, bendito fruto do vosso ventre. O clemente, ó piedosa, ó doce, sempre Virgem Maria. Rogai por nós Santa Mãe de Deus. Para que sejamos dignos das promessas de Cristo. Amém."
+        "Salve Rainha! Mãe de misericórdia, vida, doçura, esperança nossa, Salve! A vós bradamos os degredados filhos de Eva. A vós suspiramos, gemendo e chorando neste vale de lágrimas. Eia, pois, advogada nossa, esses vossos olhos misericordiosos a nós volvei, e depois deste desterro, mostrai-nos Jesus, bendito fruto do vosso ventre. O clemente, ó piedosa, ó doce, sempre Virgem Maria. 
+Rogai por nós Santa Mãe de Deus. Para que sejamos dignos das promessas de Cristo. Amém."
       )
     );
 
