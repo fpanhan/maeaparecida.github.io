@@ -223,6 +223,8 @@ class Rosary {
       const parsed = JSON.parse(state);
       this.currentMystery = parsed.mystery;
       this.currentStep = parsed.step;
+      uiController.currentFontSize = parsed.fontSize || 16
+      uiController.updateFontSize();
     }
   }
 
@@ -294,10 +296,12 @@ class UIController {
 
     this.increaseBtn.addEventListener("click", () => {
       this.increaseFontSize();
+      rosary.saveState();
     });
 
     this.decreaseBtn.addEventListener("click", () => {
       this.decreaseFontSize();
+      rosary.saveState();
     });
   }
 
@@ -342,6 +346,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // Verifica se há estado salvo no localStorage para exibir/ocultar o botão "Continuar"
   const storedState = localStorage.getItem("rosaryState");
   uiController.updateResumeButton(storedState);
+  
+  if (storedState) {
+      rosary.loadState();
+  } else {
+      uiController.updateFontSize();
+  }
 
   uiController.setupEventListeners(rosary);
 });
