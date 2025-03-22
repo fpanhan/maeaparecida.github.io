@@ -1,0 +1,10 @@
+CACHE MANIFEST
+# 2016-10-12:v1
+
+CACHE:
+https://mae.aparecida.br/index.html
+https://mae.aparecida.br/favicon.ico
+https://mae.aparecida.br/style.css
+
+NETWORK:
+*

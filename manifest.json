@@ -1,0 +1,21 @@
+{
+  "name": "Mãe Aparecida - Oração do Terço",
+  "short_name": "mae.aparecida",
+  "start_url": "https://mae.aparecida.br/?utm_source=web_app_manifest",
+  "url": "https://mae.aparecida.br",
+  "lang": "pt-br",
+  "dir": "ltr",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f4f4f4",
+  "theme_color": "#336699",
+  "description": "Reze o terço de uma forma simples e utilize esta oração para estar em contato com Deus, agradecer as bênçãos e pedir as graças necessárias.",
+  "icons": [
+    {
+      "src": "images/rosary.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "prefer_related_applications": false
+}

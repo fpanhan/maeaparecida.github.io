@@ -1,69 +1,94 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-	<!-- <base href="//mae.aparecida.br/"/> -->
-	<meta name="robots" content="all,follow" />
-	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
-	<meta charset="utf-8" />
-	<title>Oração do Terço</title>
-	<meta name="description" content="Reze o terço de uma forma simples e utilize esta oração para estar em contato com Deus, agradecer as bênçãos e pedir as graças necessárias." />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <head>
+    <meta name="robots" content="all,follow" />
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <title>Mãe Aparecida - Oração do Terço</title>
+    <meta
+      name="description"
+      content="Reze o terço de uma forma simples e utilize esta oração para estar em contato com Deus, agradecer as bênçãos e pedir as graças necessárias."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap&lang=pt-br" />
-	<link rel="stylesheet" href="style.css" />
-	<link rel="icon" type="image/png" href="images/rosary.png" />
-	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-</head>
-<body>
-<noscript>
-	<div id="NotificationNoScript">
-		<p>Você precisa ter o javascript habilitado para visualizar esse site.</p>
-		<p>You must have javascript enabled in order to properly view this website.</p>
-	</div>
-</noscript>
-<header>
-<h1>Oração do Terço</h1>
-</header>
-<main>
-	<!-- Tela de boas-vindas -->
-	<section id="welcome-screen">
-		<p>Bem-vindo ao aplicativo do Terço Católico.</p>
-		<label for="mysterySelect">Selecione o tipo de Mistério que deseja meditar:</label>
-		<select id="mysterySelect">
-			<option value="joyful">Mistérios Gozosos</option>
-			<option value="sorrowful">Mistérios Dolorosos</option>
-			<option value="glorious">Mistérios Gloriosos</option>
-			<option value="luminous">Mistérios Luminosos</option>
-		</select>
-		<section id="welcome-screen-buttons">
-			<br>
-			<button id="startBtn">Iniciar Terço</button>
-			<button id="resumeBtn" style="display:none;">Continuar Terço</button>
-		</section>
-	</section>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap&lang=pt-br"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="images/rosary.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  </head>
+  <body>
+    <noscript>
+      <div id="NotificationNoScript">
+        <p>
+          Você precisa ter o javascript habilitado para visualizar esse site.
+        </p>
+        <p>
+          You must have javascript enabled in order to properly view this
+          website.
+        </p>
+      </div>
+    </noscript>
+    <header>
+      <h1>Oração do Terço</h1>
+    </header>
+    <main>
+      <!-- Tela de boas-vindas -->
+      <section id="welcome-screen">
+        <p>Bem-vindo ao aplicativo do Terço Católico.</p>
+        <label for="mysterySelect"
+          >Selecione o tipo de Mistério que deseja meditar:</label
+        >
+        <select id="mysterySelect">
+          <option value="joyful">Mistérios Gozosos</option>
+          <option value="sorrowful">Mistérios Dolorosos</option>
+          <option value="glorious">Mistérios Gloriosos</option>
+          <option value="luminous">Mistérios Luminosos</option>
+        </select>
+        <section id="welcome-screen-buttons">
+          <br />
+          <button id="startBtn">Iniciar Terço</button>
+          <button id="resumeBtn" style="display: none">Continuar Terço</button>
+        </section>
+      </section>
 
-	<!-- Tela de oração -->
-	<section id="prayer-screen" style="display:none;">
-		<div id="progress">
-			<span id="mysteryText"></span> Progresso: <span id="progressText"></span>
-		</div>
-		<div id="prayer-container">
-			<h2 id="prayerTitle"></h2>
-			<p id="prayerText"></p>
-		</div>
-		<div id="controls">
-			<button id="prevBtn"><i class="fa-solid fa-arrow-left"></i> Anterior</button>
-			<button id="nextBtn">Próximo <i class="fa-solid fa-arrow-right"></i></button>
-		</div>
-	</section>
-</main>
+      <!-- Tela de oração -->
+      <section id="prayer-screen" style="display: none">
+        <div id="progress">
+          <span id="mysteryText"></span> Progresso:
+          <span id="progressText"></span>
+        </div>
+        <div id="prayer-container">
+          <h2 id="prayerTitle"></h2>
+          <p id="prayerText"></p>
+        </div>
+        <div id="controls">
+          <button id="prevBtn">
+            <i class="fa-solid fa-arrow-left"></i> Anterior
+          </button>
+          <button id="nextBtn">
+            Próximo <i class="fa-solid fa-arrow-right"></i>
+          </button>
+          <button id="increaseBtn">Aumentar Texto</button>
+          <button id="decreaseBtn">Diminuir Texto</button>
+        </div>
+      </section>
+    </main>
 
-<footer>
-	<p>Terço Católico App</p>
-</footer>
-<script src="app.js"></script>
-</body>
+    <footer>
+      <p>Terço Católico App</p>
+    </footer>
+    <script src="app.js"></script>
+  </body>
 </html>
