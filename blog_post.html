@@ -65,20 +65,9 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
   </head>
   <body>
-    <noscript>
-      <div id="NotificationNoScript">
-        <p>
-          Você precisa ter o javascript habilitado para visualizar esse site.
-        </p>
-        <p>
-          You must have javascript enabled in order to properly view this
-          website.
-        </p>
-      </div>
-    </noscript>
     <header>
       <div class="header-container">
-        <h1>Mãe Aparecida - Oração do Terço</h1>
+        <h1>Blog Mãe Aparecida</h1>
         <nav>
           <div class="hamburger" id="hamburger">
             <span></span>
@@ -95,68 +84,43 @@
     </header>
 
     <main>
-      <section id="welcome-screen">
-        <p>Bem-vindo ao aplicativo do Terço Católico.</p>
-        <label for="mysterySelect"
-          >Selecione o tipo de Mistério que deseja meditar:</label
-        >
-        <select id="mysterySelect">
-          <option value="joyful">Mistérios Gozosos</option>
-          <option value="sorrowful">Mistérios Dolorosos</option>
-          <option value="glorious">Mistérios Gloriosos</option>
-          <option value="luminous">Mistérios Luminosos</option>
-        </select>
-        <section id="welcome-screen-buttons">
-          <br />
-          <button id="startBtn">Iniciar Terço</button>
-          <button id="resumeBtn" style="display: none">Continuar Terço</button>
-        </section>
+      <section id="blog-post">
+        <article class="blog-post"></article>
+          <h2>Título do Post</h2>
+          <p class="date">
+            Publicado em: <span id="post-date">04/04/2025 16:45</span>
+          </p>
+          <img
+            src="images/Nossa_Senhora_Aparecida_001.jpg"
+            alt="Imagem do Post"
+            class="post-image"
+          />
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <p>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat.
+          </p>
+          <p>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+            dolore eu fugiat nulla pariatur.
+          </p>
+        </article>
       </section>
 
-      <section id="prayer-screen" style="display: none">
-        <div id="progress">
-          <span id="mysteryText"></span> Progresso:
-          <span id="progressText"></span>
+      <!-- <section class="comments">
+        <h3>Comentários</h3>
+        <div id="comment-section">
         </div>
-        <div id="prayer-container">
-          <h2 id="prayerTitle"></h2>
-          <p id="prayerText"></p>
-        </div>
-        <div id="controls">
-          <ul>
-            <li>
-              <button id="prevBtn" aria-label="Visualizar a oração anterior">
-                <i class="fa-solid fa-arrow-left"></i>
-                <span id="controls-previous">Anterior</span>
-              </button>
-            </li>
-            <li>
-              <button id="nextBtn" aria-label="Visualizar a oração seguinte">
-                <span id="controls-next">Próximo </span
-                ><i class="fa-solid fa-arrow-right"></i>
-              </button>
-            </li>
-            <li>
-              <button
-                id="increaseBtn"
-                title="Aumentar Texto"
-                aria-label="Aumentar Texto"
-              >
-                <i class="fa-solid fa-arrow-up"></i>Aa
-              </button>
-            </li>
-            <li>
-              <button
-                id="decreaseBtn"
-                title="Diminuir Texto"
-                aria-label="Diminuir Texto"
-              >
-                <i class="fa-solid fa-arrow-down"></i>Aa
-              </button>
-            </li>
-          </ul>
-        </div>
+        <textarea
+          id="comment-input"
+          placeholder="Deixe seu comentário..."
+        ></textarea>
+        <button id="submit-comment">Enviar</button>
       </section>
+      -->
 
       <section id="screen-adjustment">
         <div>

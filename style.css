@@ -28,19 +28,64 @@ main {
   padding: 20px;
 }
 
+header h1 {
+  margin: 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: #fff;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+#menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+#menu li {
+  margin: 0 15px;
+}
+
+.hidden {
+  display: none;
+}
+
 a {
-  color: #3498db;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
 }
 
 a:hover {
-  color: #2980b9;
+  color: #aeaeae;
   text-decoration: underline;
 }
 
 a:visited {
-  color: #8e44ad;
+  color: #fff;
 }
 
 a:active {
@@ -164,7 +209,51 @@ select {
   color: #e74c3c;
 }
 
+.blog-post {
+  margin-bottom: 40px;
+  text-align: justify;
+}
+
+.post-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.comments {
+  margin-top: 40px;
+}
+
+#comment-input {
+  width: 100%;
+  height: 100px;
+  margin-top: 10px;
+}
+
 @media (max-width: 600px) {
+  .hamburger {
+    display: flex;
+  }
+
+  #menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  #menu li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  #menu.show {
+    display: flex;
+  }
+
   select {
     width: 100%;
     box-sizing: border-box;
@@ -198,5 +287,24 @@ select {
   #controls-previous,
   #controls-next {
     display: none;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  a:hover {
+    color: #2e2222;
+    text-decoration: underline;
+  }
+
+  a:visited {
+    color: #000;
+  }
+
+  a:active {
+    color: #e74c3c;
   }
 }

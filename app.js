@@ -340,6 +340,8 @@ class UIController {
 document.addEventListener("DOMContentLoaded", function () {
   const rosary = new Rosary();
   const uiController = new UIController();
+  const hamburger = document.getElementById("hamburger");
+  const menu = document.getElementById("menu");
 
   // Verifica se há estado salvo no localStorage para exibir/ocultar o botão "Continuar"
   const storedState = localStorage.getItem("rosaryState");
@@ -352,4 +354,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   uiController.setupEventListeners(rosary);
+
+  hamburger.addEventListener("click", () => {
+    menu.classList.toggle("show");
+  });
+  document.addEventListener("click", (e) => {
+    if (!hamburger.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.remove("show");
+    }
+  });
 });
