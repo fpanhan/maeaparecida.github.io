@@ -28,6 +28,29 @@ main {
   padding: 20px;
 }
 
+a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #8e44ad;
+}
+
+a:active {
+  color: #e74c3c;
+}
+
+a {
+  transition: color 0.3s ease;
+}
+
 section {
   width: 80%;
   margin: 20px;
