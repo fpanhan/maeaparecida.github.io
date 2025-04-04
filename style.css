@@ -40,10 +40,12 @@ section {
 #controls {
   display: flex; /* Usar flexbox para o contêiner */
   justify-content: center; /* Centralizar os botões horizontalmente */
-  position: fixed;      /* Usa o posicionamento fixo */
-  bottom: 20px;        /* Ajusta a distância da parte inferior */
-  left: 50%;           /* Centraliza horizontalmente */
-  transform: translateX(-50%); /* Centraliza o elemento em relação a sua largura */
+  position: fixed; /* Usa o posicionamento fixo */
+  bottom: 20px; /* Ajusta a distância da parte inferior */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translateX(
+    -50%
+  ); /* Centraliza o elemento em relação a sua largura */
   background-color: #fff;
   padding: 10px; /* Padding para espaço interno */
   border-radius: 10px; /* Bordas arredondadas */
@@ -88,15 +90,15 @@ button i {
 }
 
 #controls ul {
-    list-style: none; /* Remover marcadores de lista */
-    padding: 0; /* Remover padding padrão da lista */
-    margin: 0; /* Remover margem padrão da lista */
-    display: flex; /* Usar flexbox para alinhar os itens da lista */
-    justify-content: center; /* Centralizar os itens da lista horizontalmente */
+  list-style: none; /* Remover marcadores de lista */
+  padding: 0; /* Remover padding padrão da lista */
+  margin: 0; /* Remover margem padrão da lista */
+  display: flex; /* Usar flexbox para alinhar os itens da lista */
+  justify-content: center; /* Centralizar os itens da lista horizontalmente */
 }
 
 #controls li {
-    margin: 0 5px; /* Adicionar margem entre os itens da lista */
+  margin: 0 5px;
 }
 
 #prayer-container {
@@ -124,6 +126,7 @@ button i {
 
 #prayerText {
   font-size: 16px;
+  text-align: justify;
 }
 
 select {
@@ -141,28 +144,28 @@ select {
     width: 100%;
     box-sizing: border-box;
   }
-  
+
   button {
     width: 100%;
     margin: 5px 0;
   }
-  
+
   #controls {
-    flex-direction: column; /* Empilhar os botões verticalmente em telas menores */
-    align-items: stretch; /* Esticar os botões para ocupar toda a largura */
+    flex-direction: column;
+    align-items: stretch;
   }
-  
+
   #controls ul {
     flex-direction: row;
     justify-content: center;
     align-items: center;
   }
-  
+
   #controls li {
     margin: 0 5px;
   }
-  
-  #controls>button {
+
+  #controls > button {
     width: auto;
     margin: 5px 0;
   }
