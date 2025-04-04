@@ -119,24 +119,21 @@ class Rosary {
     seq.push(
       new Prayer(
         "Ave Maria (1/3)",
-        "A primeira Ave Maria em honra a Deus Pai que nos criou: 
-Ave Maria, cheia de graça, o Senhor é convosco; bendita sois vós entre as mulheres e bendito é o fruto do vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós, pecadores, agora e na hora de nossa morte. Amém."
+        "A primeira Ave Maria em honra a Deus Pai que nos criou: \nAve Maria, cheia de graça, o Senhor é convosco; bendita sois vós entre as mulheres e bendito é o fruto do vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós, pecadores, agora e na hora de nossa morte. Amém."
       )
     );
 
     seq.push(
       new Prayer(
         "Ave Maria (2/3)",
-        "A segunda Ave Maria a Deus Filho que nos remiu: 
-Ave Maria, cheia de graça, o Senhor é convosco; bendita sois vós entre as mulheres e bendito é o fruto do vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós, pecadores, agora e na hora de nossa morte. Amém."
+        "A segunda Ave Maria a Deus Filho que nos remiu: \nAve Maria, cheia de graça, o Senhor é convosco; bendita sois vós entre as mulheres e bendito é o fruto do vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós, pecadores, agora e na hora de nossa morte. Amém."
       )
     );
 
     seq.push(
       new Prayer(
         "Ave Maria (3/3)",
-        "A terceira Ave Maria ao Espírito Santo que nos santifica: 
-Ave Maria, cheia de graça, o Senhor é convosco; bendita sois vós entre as mulheres e bendito é o fruto do vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós, pecadores, agora e na hora de nossa morte. Amém."
+        "A terceira Ave Maria ao Espírito Santo que nos santifica: \nAve Maria, cheia de graça, o Senhor é convosco; bendita sois vós entre as mulheres e bendito é o fruto do vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós, pecadores, agora e na hora de nossa morte. Amém."
       )
     );
 
@@ -205,8 +202,7 @@ Ave Maria, cheia de graça, o Senhor é convosco; bendita sois vós entre as mul
     seq.push(
       new Prayer(
         "Salve Rainha",
-        "Salve Rainha! Mãe de misericórdia, vida, doçura, esperança nossa, Salve! A vós bradamos os degredados filhos de Eva. A vós suspiramos, gemendo e chorando neste vale de lágrimas. Eia, pois, advogada nossa, esses vossos olhos misericordiosos a nós volvei, e depois deste desterro, mostrai-nos Jesus, bendito fruto do vosso ventre. O clemente, ó piedosa, ó doce, sempre Virgem Maria. 
-Rogai por nós Santa Mãe de Deus. Para que sejamos dignos das promessas de Cristo. Amém."
+        "Salve Rainha! Mãe de misericórdia, vida, doçura, esperança nossa, Salve! A vós bradamos os degredados filhos de Eva. A vós suspiramos, gemendo e chorando neste vale de lágrimas. Eia, pois, advogada nossa, esses vossos olhos misericordiosos a nós volvei, e depois deste desterro, mostrai-nos Jesus, bendito fruto do vosso ventre. O clemente, ó piedosa, ó doce, sempre Virgem Maria. \nRogai por nós Santa Mãe de Deus. Para que sejamos dignos das promessas de Cristo. Amém."
       )
     );
 
@@ -227,7 +223,7 @@ Rogai por nós Santa Mãe de Deus. Para que sejamos dignos das promessas de Cris
       const parsed = JSON.parse(state);
       this.currentMystery = parsed.mystery;
       this.currentStep = parsed.step;
-      uiController.currentFontSize = parsed.fontSize || 16
+      uiController.currentFontSize = parsed.fontSize || 16;
       uiController.updateFontSize();
     }
   }
@@ -350,11 +346,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Verifica se há estado salvo no localStorage para exibir/ocultar o botão "Continuar"
   const storedState = localStorage.getItem("rosaryState");
   uiController.updateResumeButton(storedState);
-  
+
   if (storedState) {
-      rosary.loadState();
+    rosary.loadState();
   } else {
-      uiController.updateFontSize();
+    uiController.updateFontSize();
   }
 
   uiController.setupEventListeners(rosary);
