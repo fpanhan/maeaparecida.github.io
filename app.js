@@ -223,8 +223,6 @@ class Rosary {
       const parsed = JSON.parse(state);
       this.currentMystery = parsed.mystery;
       this.currentStep = parsed.step;
-      uiController.currentFontSize = parsed.fontSize || 16;
-      uiController.updateFontSize();
     }
   }
 
@@ -251,6 +249,7 @@ class UIController {
     this.increaseBtn = document.getElementById("increaseBtn");
     this.decreaseBtn = document.getElementById("decreaseBtn");
     this.currentFontSize = 16;
+    updateFontSize();
   }
 
   setupEventListeners(rosary) {
