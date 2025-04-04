@@ -249,7 +249,6 @@ class UIController {
     this.increaseBtn = document.getElementById("increaseBtn");
     this.decreaseBtn = document.getElementById("decreaseBtn");
     this.currentFontSize = 16;
-    updateFontSize();
   }
 
   setupEventListeners(rosary) {
