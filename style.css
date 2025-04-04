@@ -192,7 +192,7 @@ button i {
 
 #prayerText {
   font-size: 16px;
-  text-align: justify;
+  text-align: left;
 }
 
 select {
@@ -211,7 +211,7 @@ select {
 
 .blog-post {
   margin-bottom: 40px;
-  text-align: justify;
+  text-align: left;
 }
 
 .post-image {
@@ -227,6 +227,47 @@ select {
   width: 100%;
   height: 100px;
   margin-top: 10px;
+}
+
+.cookie-consent {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  z-index: 1000;
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.cookie-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cookie-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn-accept {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-more-info {
+  color: #fff;
+  text-decoration: underline;
 }
 
 @media (max-width: 600px) {
@@ -306,5 +347,14 @@ select {
 
   a:active {
     color: #e74c3c;
+  }
+
+  .cookie-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cookie-buttons {
+    margin-top: 10px;
   }
 }

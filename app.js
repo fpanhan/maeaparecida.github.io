@@ -342,6 +342,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const uiController = new UIController();
   const hamburger = document.getElementById("hamburger");
   const menu = document.getElementById("menu");
+  const cookieConsent = document.getElementById("cookie-consent");
+  const acceptCookiesBtn = document.getElementById("accept-cookies");
 
   // Verifica se há estado salvo no localStorage para exibir/ocultar o botão "Continuar"
   const storedState = localStorage.getItem("rosaryState");
@@ -363,4 +365,24 @@ document.addEventListener("DOMContentLoaded", function () {
       menu.classList.remove("show");
     }
   });
+
+  // Verifica se já aceitou cookies
+  function checkCookieConsent() {
+    const cookieAccepted = localStorage.getItem("cookiesAccepted");
+    if (!cookieAccepted) {
+      cookieConsent.style.display = "block";
+    }
+  }
+
+  // Aceitar cookies
+  function acceptCookies() {
+    localStorage.setItem("cookiesAccepted", "true");
+    cookieConsent.style.display = "none";
+  }
+
+  // Inicializa a verificação de cookies
+  checkCookieConsent();
+
+  // Evento de aceite
+  acceptCookiesBtn.addEventListener("click", acceptCookies);
 });
