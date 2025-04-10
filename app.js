@@ -17,13 +17,13 @@ class Rosary {
     this.hoje = new Date();
     this.diaDaSemana = this.hoje.getDay();
     this.nomeDoDiaDaSemana = [
-      "Domingo",
+      "Domingo", // 0
       "Segunda-feira",
       "Terça-feira",
       "Quarta-feira",
       "Quinta-feira",
       "Sexta-feira",
-      "Sábado",
+      "Sábado"
     ][this.diaDaSemana];
     this.numerosOrdinais = [
       "",
@@ -31,54 +31,62 @@ class Rosary {
       "segundo",
       "terceiro",
       "quarto",
-      "quinto",
+      "quinto"
     ];
     this.sequence = [];
     this.currentStep = 0;
-    this.currentMystery = this.getDefaultMystery();
+    this.currentMystery = this.getMystery(this.diaDaSemana);
     this.mysteries = {
       joyful: [
         "No Primeiro Mistério Gozoso contemplamos a Anunciação do Anjo a Nossa Senhora (Lc 1, 26-38).",
         "No Segundo Mistério Gozoso contemplamos a Visitação de Nossa Senhora a sua prima Santa Isabel (Lc 1, 39-56).",
         "No Terceiro Mistério Gozoso contemplamos o Nascimento de Nosso Senhor Jesus Cristo em Belém (Lc 2, 1-15).",
         "No Quarto Mistério Gozoso contemplamos a Apresentação do Menino Jesus no Templo e a Purificação de Nossa Senhora (Lc 2, 22-35).",
-        "No Quinto Mistério Gozoso contemplamos a perda e o encontro do Menino Jesus (Lc 2, 42-52).",
+        "No Quinto Mistério Gozoso contemplamos a perda e o encontro do Menino Jesus (Lc 2, 42-52)."
       ],
       sorrowful: [
         "No Primeiro Mistério Doloroso contemplamos a Agonia de Jesus no Horto das Oliveiras (Mc 14, 32-42).",
         "No Segundo Mistério Doloroso contemplamos a Flagelação de Nosso Senhor Jesus Cristo (Jo 19, 1).",
         "No Terceiro Mistério Doloroso contemplamos a Coroação de espinhos de Nosso Senhor (Mt 27, 29).",
         "No Quarto Mistério Doloroso contemplamos Nosso Senhor carregando penosamente a Cruz até o alto do Calvário (Lc 23, 26-32).",
-        "No Quinto Mistério Doloroso contemplamos a Crucifixão e morte de Nosso Senhor Jesus Cristo (Lc 23, 33-47).",
+        "No Quinto Mistério Doloroso contemplamos a Crucifixão e morte de Nosso Senhor Jesus Cristo (Lc 23, 33-47)."
       ],
       glorious: [
         "No Primeiro Mistério Glorioso contemplamos a Ressurreição de Jesus Cristo (Mc 16, 1-8).",
         "No Segundo Mistério Glorioso contemplamos a Ascensão de Jesus aos Céus (At 1, 3-11).",
         "No Terceiro Mistério Glorioso contemplamos a descida do Espírito Santo sobre Nossa Senhora e os Apóstolos no Cenáculo (At 2, 1-14).",
         "No Quarto Mistério Glorioso contemplamos a Assunção de Nossa Senhora aos Céus (1 Cor 15, 20-23, 53-55).",
-        "No Quinto Mistério Glorioso contemplamos a gloriosa coroação de Maria Santíssima como Rainha do Céu e da Terra (Ap 12, 1-6).",
+        "No Quinto Mistério Glorioso contemplamos a gloriosa coroação de Maria Santíssima como Rainha do Céu e da Terra (Ap 12, 1-6)."
       ],
       luminous: [
         "No Primeiro Mistério Luminoso contemplamos o Batismo de Jesus (Mt 3, 13-17).",
         "No Segundo Mistério Luminoso contemplamos a auto-revelação nas Bodas de Caná (Jo 2, 1-12).",
         "No Terceiro Mistério Luminoso contemplamos o Anúncio do Reino de Deus convidando à conversão (Mc 1, 14-15).",
         "No Quarto Mistério Luminoso contemplamos a Transfiguração de Jesus (Lc 9, 28-36).",
-        "No Quinto Mistério Luminoso contemplamos a instituição da Eucaristia (Mt 26, 26-29).",
-      ],
+        "No Quinto Mistério Luminoso contemplamos a instituição da Eucaristia (Mt 26, 26-29)."
+      ]
     };
   }
 
-  getDefaultMystery() {
-    if (this.diaDaSemana === 0 || this.diaDaSemana === 3) {
+  getMystery(weekDay) {
+	if (this.weekDay === undefined) {
+      if (this.weekDay < 0 || this.weekDay > 6) {
+        console.log("weekDay não está preenchido corretamente");
+        this.hoje = new Date();
+        this.weekDay = this.hoje.getDay();
+      }
+	}
+
+    if (this.weekDay === 0 || this.weekDay === 3) {
       return "glorious";
     }
-    if (this.diaDaSemana === 1 || this.diaDaSemana === 6) {
+    if (this.weekDay === 1 || this.weekDay === 6) {
       return "joyful";
     }
-    if (this.diaDaSemana === 3 || this.diaDaSemana === 5) {
+    if (this.weekDay === 3 || this.weekDay === 5) {
       return "sorrowful";
     }
-    if (this.diaDaSemana === 4) {
+    if (this.weekDay === 4) {
       return "luminous";
     }
 
@@ -213,6 +221,7 @@ class Rosary {
     const state = {
       mystery: this.currentMystery,
       step: this.currentStep,
+	  diaDaSemana: this.diaDaSemana,
     };
     localStorage.setItem("rosaryState", JSON.stringify(state));
   }
@@ -223,7 +232,23 @@ class Rosary {
       const parsed = JSON.parse(state);
       this.currentMystery = parsed.mystery;
       this.currentStep = parsed.step;
+	  this.diaDaSemana = parsed.diaDaSemana;
     }
+	/*let stateWeekDay = getMystery(this.diaDaSemana);
+	if (this.currentMystery !== this.stateWeekDay) {
+		removeState();
+		this.currentMystery = "";
+	    this.currentStep = "";
+	    this.diaDaSemana = new Date().getDay();
+	}*/
+  }
+
+  removeState() {
+    localStorage.removeItem("rosaryState");
+  }
+
+  clearState() {
+    localStorage.clear();
   }
 
   capitalizeFirstLetter(str) {
@@ -242,9 +267,7 @@ class UIController {
     this.prayerText = document.getElementById("prayerText");
     this.progressText = document.getElementById("progressText");
     this.mysteryText = document.getElementById("mysteryText");
-    this.welcomeScreenButtons = document.getElementById(
-      "welcome-screen-buttons"
-    );
+    this.welcomeScreenButtons = document.getElementById("welcome-screen-buttons");
     this.prayerScreen = document.getElementById("prayer-screen");
     this.increaseBtn = document.getElementById("increaseBtn");
     this.decreaseBtn = document.getElementById("decreaseBtn");
