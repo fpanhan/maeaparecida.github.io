@@ -226,7 +226,7 @@ class Rosary {
     localStorage.setItem("rosaryState", JSON.stringify(state));
   }
 
-  loadState() {
+  /*loadState() {
     const state = localStorage.getItem("rosaryState");
     if (state) {
       const parsed = JSON.parse(state);
@@ -234,14 +234,35 @@ class Rosary {
       this.currentStep = parsed.step;
 	  this.diaDaSemana = parsed.diaDaSemana;
     }
-	/*let stateWeekDay = getMystery(this.diaDaSemana);
+	let stateWeekDay = getMystery(this.diaDaSemana);
 	if (this.currentMystery !== this.stateWeekDay) {
 		removeState();
 		this.currentMystery = "";
 	    this.currentStep = "";
 	    this.diaDaSemana = new Date().getDay();
-	}*/
-  }
+	}
+  }*/
+  
+  loadState() {
+	const state = localStorage.getItem("rosaryState");
+	if (state) {
+		const parsed = JSON.parse(state);
+		const today = new Date().getDay();
+		if (parsed.diaDaSemana !== today) {
+			// Se o dia armazenado for diferente do dia atual, limpa o estado
+			this.clearState();
+			// Opcional: Reinicia os valores (você pode personalizar conforme necessário)
+			this.currentMystery = "";
+			this.currentStep = 0;
+			this.diaDaSemana = today;
+			return;
+		}
+		// Se o dia for o mesmo, carrega o estado
+		this.currentMystery = parsed.mystery;
+		this.currentStep = parsed.step;
+		this.diaDaSemana = parsed.diaDaSemana;
+	}
+}
 
   removeState() {
     localStorage.removeItem("rosaryState");
