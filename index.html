@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+<head>
     <meta name="robots" content="all,follow" />
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
     <meta charset="utf-8" />
@@ -30,108 +30,108 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="images/rosary.png" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-  </head>
-  <body>
+</head>
+<body>
     <noscript>
-      <div id="NotificationNoScript">
-        <p>Você precisa ter o javascript habilitado para visualizar esse site.</p>
-        <p>You must have javascript enabled in order to properly view this website.</p>
-      </div>
+        <div id="NotificationNoScript">
+            <p>Você precisa ter o javascript habilitado para visualizar esse site.</p>
+            <p>You must have javascript enabled in order to properly view this website.</p>
+        </div>
     </noscript>
     <header>
-      <div class="header-container">
-        <h1>Mãe Aparecida - Oração do Terço</h1>
-        <nav>
-          <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <ul id="menu" class="hidden">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="blog_post.html">Blog</a></li>
-            <li><a href="/contato">Contato</a></li>
-          </ul>
-        </nav>
-      </div>
+        <div class="header-container">
+            <h1>Mãe Aparecida - Oração do Terço</h1>
+            <nav>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul id="menu" class="hidden">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog_post.html">Blog</a></li>
+                    <li><a href="/contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-      <section id="welcome-screen">
-        <p>Bem-vindo ao aplicativo do Terço Católico.</p>
-        <label for="mysterySelect">Selecione o tipo de Mistério que deseja meditar:</label>
-        <select id="mysterySelect">
-          <option value="joyful">Mistérios Gozosos (segundas e sábados, e nos domingos do Advento)</option>
-          <option value="sorrowful">Mistérios Dolorosos (terças, sextas-feiras e domingos da Quaresma até a Páscoa)</option>
-          <option value="glorious">Mistérios Gloriosos (quartas-feiras e domingos da Páscoa até ao Advento)</option>
-          <option value="luminous">Mistérios Luminosos (quinta-feira)</option>
-        </select>
-        <section id="welcome-screen-buttons">
-          <br />
-          <button id="startBtn">Iniciar Terço</button>
-          <button id="resumeBtn" style="display: none">Continuar Terço</button>
+        <section id="welcome-screen">
+            <p>Bem-vindo ao aplicativo do Terço Católico.</p>
+            <label for="mysterySelect">Selecione o tipo de Mistério que deseja meditar:</label>
+            <select id="mysterySelect">
+                <option value="joyful">Mistérios Gozosos (segundas e sábados, e nos domingos do Advento)</option>
+                <option value="sorrowful">Mistérios Dolorosos (terças, sextas-feiras e domingos da Quaresma até a Páscoa)</option>
+                <option value="glorious">Mistérios Gloriosos (quartas-feiras e domingos da Páscoa até ao Advento)</option>
+                <option value="luminous">Mistérios Luminosos (quinta-feira)</option>
+            </select>
+            <section id="welcome-screen-buttons">
+                <br />
+                <button id="startBtn">Iniciar Terço</button>
+                <button id="resumeBtn" style="display: none">Continuar Terço</button>
+            </section>
         </section>
-      </section>
 
-      <section id="prayer-screen" style="display: none">
-        <div id="progress">
-          <span id="mysteryText"></span> Progresso: <span id="progressText"></span>
-        </div>
-        <div id="prayer-container">
-          <h2 id="prayerTitle"></h2>
-          <p id="prayerText"></p>
-        </div>
-        <div id="controls">
-          <ul>
-            <li>
-              <button id="prevBtn" aria-label="Visualizar a oração anterior"><i class="fa-solid fa-arrow-left"></i><span id="controls-previous"> Anterior</span></button>
-            </li>
-            <li>
-              <button id="nextBtn" aria-label="Visualizar a oração seguinte"><span id="controls-next">Próximo </span><i class="fa-solid fa-arrow-right"></i></button>
-            </li>
-            <li>
-              <button id="increaseBtn" title="Aumentar Texto" aria-label="Aumentar Texto"><i class="fa-solid fa-arrow-up"></i>Aa</button>
-            </li>
-            <li>
-              <button id="decreaseBtn" title="Diminuir Texto" aria-label="Diminuir Texto"><i class="fa-solid fa-arrow-down"></i>Aa</button>
-            </li>
-          </ul>
-        </div>
-      </section>
+        <section id="prayer-screen" style="display: none">
+            <div id="progress">
+                <span id="mysteryText"></span> Progresso: <span id="progressText"></span>
+            </div>
+            <div id="prayer-container">
+                <h2 id="prayerTitle"></h2>
+                <p id="prayerText"></p>
+            </div>
+            <div id="controls">
+                <ul>
+                    <li>
+                        <button id="prevBtn" aria-label="Visualizar a oração anterior"><i class="fa-solid fa-arrow-left"></i><span id="controls-previous"> Anterior</span></button>
+                    </li>
+                    <li>
+                        <button id="nextBtn" aria-label="Visualizar a oração seguinte"><span id="controls-next">Próximo </span><i class="fa-solid fa-arrow-right"></i></button>
+                    </li>
+                    <li>
+                        <button id="increaseBtn" title="Aumentar Texto" aria-label="Aumentar Texto"><i class="fa-solid fa-arrow-up"></i>Aa</button>
+                    </li>
+                    <li>
+                        <button id="decreaseBtn" title="Diminuir Texto" aria-label="Diminuir Texto"><i class="fa-solid fa-arrow-down"></i>Aa</button>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
-      <section id="screen-adjustment">
-        <div>
-          <p>&nbsp;</p>
-          <p>I Coríntios 11,25 Do mesmo modo, depois de haver ceado, tomou também o cálice, dizendo: Este cálice é a Nova Aliança no meu sangue.</p>
-          <p>&nbsp;</p>
-        </div>
-      </section>
+        <section id="screen-adjustment">
+            <div>
+                <p>&nbsp;</p>
+                <p>I Coríntios 11,25 Do mesmo modo, depois de haver ceado, tomou também o cálice, dizendo: Este cálice é a Nova Aliança no meu sangue.</p>
+                <p>&nbsp;</p>
+            </div>
+        </section>
     </main>
 
     <footer>
-      <p>&nbsp;</p>
-      <p>Terço Católico App</p>
-      <div class="footer-links">
-        <a href="politica-cookies.html">Política de Cookies</a>
-      </div>
-      <i class="fa-solid fa-code tiny"></i> with
-      <i class="fa-solid fa-heart tiny font-red"></i> by
-      <a href="https://fpanhan.com.br/">Me</a><br />
-      <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>Terço Católico App</p>
+        <div class="footer-links">
+            <a href="politica-cookies.html">Política de Cookies</a>
+        </div>
+        <i class="fa-solid fa-code tiny"></i> with
+        <i class="fa-solid fa-heart tiny font-red"></i> by
+        <a href="https://fpanhan.com.br/">Me</a><br />
+        <p>&nbsp;</p>
     </footer>
 
     <div id="cookie-consent" class="cookie-consent">
-      <div class="cookie-content">
-        <p>
-          🍪 Este site utiliza cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa política de cookies.
-        </p>
-        <div class="cookie-buttons">
-          <button id="accept-cookies" class="btn-accept">Aceitar</button>
-          <a href="/politica-cookies" class="btn-more-info">Saiba Mais</a>
+        <div class="cookie-content">
+            <p>
+                🍪 Este site utiliza cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa política de cookies.
+            </p>
+            <div class="cookie-buttons">
+                <button id="accept-cookies" class="btn-accept">Aceitar</button>
+                <a href="/politica-cookies" class="btn-more-info">Saiba Mais</a>
+            </div>
         </div>
-      </div>
     </div>
 
-    <script src="app.js"></script>
-  </body>
+    <script src="app2.js"></script>
+</body>
 </html>

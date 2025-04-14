@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/fpanhan/maeaparecida.github.io#readme",
   "devDependencies": {
+    "eslint": "^9.24.0",
     "http-server": "^14.1.1",
     "nodemon": "^3.1.9"
   }
