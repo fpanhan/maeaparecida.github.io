@@ -124,7 +124,7 @@ class RosaryCompositeBuilder extends PrayerCompositeBuilder {
       initial.add(new PrayerLeaf(`Ave Maria (${i}/3)`, this.prayers["AveMaria"]));
     }
 
-    initial.add(new PrayerLeaf("Glória", this.prayers["Glória"]));
+    initial.add(new PrayerLeaf("Glória", this.prayers["Gloria"]));
     initial.add(new PrayerLeaf("Ó meu Jesus, perdoai-nos!", this.prayers["OhMeuJesus"]));
     root.add(initial);
 
@@ -142,7 +142,7 @@ class RosaryCompositeBuilder extends PrayerCompositeBuilder {
       }
       mysteryComposite.add(hailMaryComposite);
       
-      mysteryComposite.add(new PrayerLeaf("Glória", this.prayers["Glória"]));
+      mysteryComposite.add(new PrayerLeaf("Glória", this.prayers["Gloria"]));
       mysteryComposite.add(new PrayerLeaf("Ó meu Jesus, perdoai-nos!", this.prayers["OhMeuJesus"]));
       root.add(mysteryComposite);
     }
@@ -184,7 +184,7 @@ class MorningPrayerBuilder extends PrayerCompositeBuilder {
   build() {
     let easterTime = false;
     const root = new PrayerComposite("Oração da Manhã");
-    root.add(new PrayerLeaf("Sinal da Cruz", this.prayers["SinalDaCruz"]));
+    root.add(new PrayerLeaf("Sinal da Cruz", this.prayers["PeloSinalDaSantaCruz"]));
   
     const holySpirit = new PrayerComposite("Invocação ao Espírito Santo");
     holySpirit.add(new PrayerLeaf("Invocação ao Espírito Santo", this.prayers["VindeEspiritoSanto"] || "Vinde Espírito Santo..."));
@@ -197,13 +197,13 @@ class MorningPrayerBuilder extends PrayerCompositeBuilder {
     offeringDay.add(new PrayerLeaf("Oferecimento do dia", this.prayers["OferecimentoDia"]));
     offeringDay.add(new PrayerLeaf("Pai Nosso", this.prayers["PaiNosso"]));
     offeringDay.add(new PrayerLeaf("Ave Maria", this.prayers["AveMaria"]));
-    offeringDay.add(new PrayerLeaf("Glória", this.prayers["Glória"]));
+    offeringDay.add(new PrayerLeaf("Glória", this.prayers["Gloria"]));
     root.add(offeringDay);
   
     if (easterTime) {
         const holyQueen = new PrayerComposite("Rainha do Céu (durante o Tempo Pascal)");
         for (let i = 1; i <= 4; i++) {
-          holyQueen.add(new PrayerLeaf(`Rainha do Céu (durante o Tempo Pascal)`, this.prayers[`RainhaDoCéu0${i}`]));
+          holyQueen.add(new PrayerLeaf(`Rainha do Céu (durante o Tempo Pascal)`, this.prayers[`RainhaDoCeu0${i}`]));
         }
         root.add(holyQueen);
     }
@@ -214,10 +214,10 @@ class MorningPrayerBuilder extends PrayerCompositeBuilder {
         if (i <= 3) {
           angelus.add(new PrayerLeaf(`Ave Maria`, this.prayers["AveMaria"]));
         }
-        }
+      }
       for (let i = 1; i <= 3; i++) {
-        angelus.add(new PrayerLeaf(`Glória (${i}/3)`, this.prayers["Glória"]));
-        }
+        angelus.add(new PrayerLeaf(`Glória (${i}/3)`, this.prayers["Gloria"]));
+      }
       root.add(angelus);
     }
   
@@ -260,12 +260,74 @@ class NightPrayerBuilder extends PrayerCompositeBuilder {
     this.currentStep = 0;
   }
   build() {
-    const root = new PrayerComposite("Oração da Noite");
-    root.add(new PrayerLeaf("Exame de Consciência", this.prayers["ExameNoite"] || "Reflita sobre o dia..."));
-    root.add(new PrayerLeaf("Ato de Contrição", this.prayers["ContricaoNoite"] || "Senhor, tende piedade..."));
-    root.add(new PrayerLeaf("Pai Nosso", this.prayers["PaiNosso"]));
-    root.add(new PrayerLeaf("Ave Maria", this.prayers["AveMaria"]));
-    root.add(new PrayerLeaf("Glória", this.prayers["Glória"]));
+    const root = new PrayerComposite("Oração da Noite ");
+    root.add(new PrayerLeaf("Sinal da Cruz", this.prayers["PeloSinalDaSantaCruz"]));
+
+    const conscience = new PrayerComposite("Breve Exame de Consciência");
+    conscience.add(new PrayerLeaf("Breve Exame de Consciência", this.prayers["ExameConsciencia"]));
+    conscience.add(new PrayerLeaf("Ato Penitencial", this.prayers["AtoPenitencial"]));
+    root.add(conscience);
+
+    const family = new PrayerComposite("Oração pela própria Familia");
+    family.add(new PrayerLeaf("Oração pela própria Familia", this.prayers["OracaoPropriaFamilia"]));
+    family.add(new PrayerLeaf("Pai Nosso", this.prayers["PaiNosso"]));
+    family.add(new PrayerLeaf("Ave Maria", this.prayers["AveMaria"]));
+    family.add(new PrayerLeaf("Glória", this.prayers["Gloria"]));
+    root.add(family);
+
+    const underYourProtection = new PrayerComposite("Sob a vossa proteção");
+    underYourProtection.add(new PrayerLeaf("Sob a vossa proteção", this.prayers["SobVossaProtecao"]));
+    root.add(underYourProtection);
+
+    const jesusLivingInMary = new PrayerComposite("Oração a Jesus vivendo em Maria");
+    jesusLivingInMary.add(new PrayerLeaf("Oração a Jesus vivendo em Maria", this.prayers["JesusVivendoMaria"]));
+    root.add(jesusLivingInMary);
+
+    const jesusSacredHeart = new PrayerComposite("Oração ao Sagrado Coração de Jesus");
+    for (let i = 1; i <= 3; i++) {
+      jesusSacredHeart.add(new PrayerLeaf("Oração ao Sagrado Coração de Jesus", this.prayers[`SagradoCoracaoJesus0${i}`]));
+      jesusSacredHeart.add(new PrayerLeaf("Glória", this.prayers["Gloria"]));
+    }
+    root.add(jesusSacredHeart);
+
+    const remember = new PrayerComposite("Lembrai-vos");
+    remember.add(new PrayerLeaf("Lembrai-vos", this.prayers["LembraiVosMaria"]));
+    root.add(remember);
+
+    const spiritualCommunion = new PrayerComposite("Comunhão Espiritual");
+    spiritualCommunion.add(new PrayerLeaf("Comunhão Espiritual", this.prayers["ComunhaoEspiritual"]));
+    root.add(spiritualCommunion);
+
+    const sweetLady = new PrayerComposite("Ó Doce Senhora Minha");
+    sweetLady.add(new PrayerLeaf("Ó Doce Senhora Minha", this.prayers["DoceSenhoraMinha"]));
+    root.add(sweetLady);
+
+    return root.flatten();
+  }
+}
+
+class AngelusPrayerBuilder extends PrayerCompositeBuilder {
+  constructor(prayers) {
+    super(prayers);
+    this.sequence = [];
+    this.currentStep = 0;
+  }
+  build() {
+    const root = new PrayerComposite("Oração do Anjo (Angelus)");
+    root.add(new PrayerLeaf("Introdução", this.prayers["AngelusIntro"]));
+
+    const angelus = new PrayerComposite("Angelus");
+    for (let i = 1; i <= 3; i++) {
+      angelus.add(new PrayerLeaf(`Oração do Anjo (Angelus)`, this.prayers[`Angelus0${i}`]));
+      if (i <= 3) {
+        angelus.add(new PrayerLeaf(`Ave Maria`, this.prayers["AveMaria"]));
+      }
+    }
+    for (let i = 1; i <= 3; i++) {
+      angelus.add(new PrayerLeaf(`Glória (${i}/3)`, this.prayers["Gloria"]));
+    }
+    
+    root.add(angelus);
     return root.flatten();
   }
 }
@@ -342,6 +404,9 @@ function getPrayerSequence(prayers, type, mysteryType) {
     case "evening":
       builder = new NightPrayerBuilder(prayers);
       break;
+    case "angelus":
+      builder = new AngelusPrayerBuilder(prayers);
+      break;
     default:
       throw new Error("Tipo de oração desconhecido");
   }
@@ -384,7 +449,7 @@ class UIController {
   this.startBtn.addEventListener("click", () => {
     let selected = this.prayerSelect.value;
       let type, mysteryType;
-      if (selected === "morning" || selected === "evening") {
+      if (selected === "morning" || selected === "evening" || selected === "angelus") {
         type = selected;
         mysteryType = null;
       } else {
@@ -479,7 +544,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   
   // Exemplo de lógica para decidir o tipo e o mistério:
   let type, mysteryType;
-  if (selectedType === "morning" || selectedType === "evening") {
+  if (selectedType === "morning" || selectedType === "evening" || selectedType === "angelus") {
     type = selectedType;
     mysteryType = null;
   } else {
