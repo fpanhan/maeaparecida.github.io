@@ -30,6 +30,8 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="images/rosary.png" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/15.0.7/marked.min.js" integrity="sha512-rPuOZPx/WHMHNx2RoALKwiCDiDrCo4ekUctyTYKzBo8NGA79NcTW2gfrbcCL2RYL7RdjX2v9zR0fKyI4U4kPew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
     <noscript>
@@ -71,8 +73,8 @@
             </select>
             <section id="welcome-screen-buttons">
                 <br />
-                <button id="startBtn">Iniciar Oração</button>
-                <button id="resumeBtn" style="display: none">Continuar Oração</button>
+                <button id="startBtn" aria-label="Clique para iniciar a oração selecionada">Iniciar Oração</button>
+                <button id="resumeBtn" aria-label="Clique para continuar a oração selecionada" style="display: none">Continuar Oração</button>
             </section>
         </section>
 
@@ -82,7 +84,7 @@
             </div>
             <div id="prayer-container">
                 <h2 id="prayerTitle"></h2>
-                <p id="prayerText"></p>
+                <p><div id="prayerText"></div></p>
             </div>
             <div id="controls">
                 <ul>
@@ -90,7 +92,7 @@
                         <button id="prevBtn" aria-label="Visualizar a oração anterior"><i class="fa-solid fa-arrow-left"></i><span id="controls-previous"> Anterior</span></button>
                     </li>
                     <li>
-                        <button id="nextBtn" aria-label="Visualizar a oração seguinte"><span id="controls-next">Próximo </span><i class="fa-solid fa-arrow-right"></i></button>
+                        <button id="nextBtn" title="Visualizar a oração seguinte" aria-label="Visualizar a oração seguinte"><span id="controls-next">Próximo </span><i class="fa-solid fa-arrow-right"></i></button>
                     </li>
                     <li>
                         <button id="increaseBtn" title="Aumentar Texto" aria-label="Aumentar Texto"><i class="fa-solid fa-arrow-up"></i>Aa</button>

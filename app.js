@@ -448,16 +448,16 @@ class UIController {
 
   this.startBtn.addEventListener("click", () => {
     let selected = this.prayerSelect.value;
-      let type, mysteryType;
-      if (selected === "morning" || selected === "evening" || selected === "angelus") {
-        type = selected;
-        mysteryType = null;
-      } else {
-        type = "rosary";
-        mysteryType = selected;
-      }
-      appState.currentMystery = mysteryType || "joyful";
-      appState.sequence = getPrayerSequence(appState.prayers, type, mysteryType);
+    let type, mysteryType;
+    if (selected === "morning" || selected === "evening" || selected === "angelus") {
+      type = selected;
+      mysteryType = null;
+    } else {
+      type = "rosary";
+      mysteryType = selected;
+    }
+    appState.currentMystery = mysteryType || "joyful";
+    appState.sequence = getPrayerSequence(appState.prayers, type, mysteryType);
     appState.currentStep = 0;
     this.showPrayerScreen();
     this.displayStep();
@@ -495,7 +495,7 @@ class UIController {
     });
 
     this.decreaseBtn.addEventListener("click", () => {
-      decreaseFontSize();
+      this.decreaseFontSize();
       saveState();
     });
   }
@@ -510,7 +510,7 @@ class UIController {
     const mysteryText = this.prayerSelect.options[prayerSelected].text;
     const step = appState.sequence[appState.currentStep];
     this.prayerTitle.innerText = step.title;
-    this.prayerText.innerText = step.text;
+    this.prayerText.innerHTML = marked.parse(step.text);
     this.progressText.innerText = (appState.currentStep + 1) + " / " + appState.sequence.length;
     this.mysteryText.innerText = mysteryText + " - ";
   }
